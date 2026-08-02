@@ -1,0 +1,217 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #fe5430;
+    --border-color: #dbdbdb;
+    --star-color-gold: #ffb91e;
+
+    --height-header: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--height-header) - var(--navbar-height));
+    --height-header-sort: 46px;
+}
+* {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+}
+/* Layout: Các item trên PC mặc định cách nhau 24px */
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+/* CSS cho phần content, responsive chia layout */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-10 {
+    width: 83.3333%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+/* Tạo keyframes cho QR */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* CSS chung cho modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    animation: fadeIn ease-in .1s;
+}
+.modal__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* Vị trí tương đối theo modal */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__container {
+    margin: auto;
+    position: relative; /* Lấy vị trí cố định */
+    z-index: 1;
+    --from-scale: 0.7;
+    --to-scale: 1;
+    animation: scaleIn linear .1s;
+}
+/* CSS cho form (chung) */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 2px;
+    padding: 0 12px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-flex; /* button hiển thị trên một dòng */
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+}
+.btn---white-color {
+    background-color: var(--white-color);
+}
+.btn.btn--primary-color {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.btn.btn--disable {
+    color: #949494;
+    background-color: #c3c3c3;
+    cursor: default;
+}
+.btn.btn--click:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+/* Tạo keyframes cho authencate (phần container) */
+@keyframes scaleIn {
+    from {
+        transform: scale(var(--from-scale));
+    }
+    to {
+        transform: scale(var(--to-scale));
+    }
+}
+/* CSS dùng cho thanh filter giá bán */
+.nav-filter__price {
+    z-index: 1;
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.nav-filter__price-title {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+.nav-filter__price-icon {
+    font-size: 1.4rem;
+    color: #555;
+    margin: 0 16px;
+    position: relative;
+    top: 1px;
+}
+.nav-filter__price-list {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    list-style: none;
+    padding: 8px 16px;
+    display: none;
+}
+.nav-filter__price-item {
+
+}
+.nav-filter__price-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding: 8px 0;
+    display: block;
+}
+.nav-filter__price-link:hover {
+    color: var(--primary-color);
+}
+.nav-filter__price:hover .nav-filter__price-list {
+    display: block;
+}
+/* CSS dùng chung pagination */
+.nav-pagination {
+
+}
+.nav-pagination--magin-top-bottom {
+    margin: 48px 0 32px 0;
+}
+.nav-pagination__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+.nav-pagination__item {
+    margin: 0 12px;
+}
+.nav-pagination__item-link {
+    --height: 30px;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    text-decoration: none;
+    display: block;
+    min-width: 40px;
+    text-align: center;
+    height: var(--height);
+    line-height: var(--height);
+    border-radius: 2px;
+}
+.nav-pagination__item--active .nav-pagination__item-link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.nav-pagination__item--active .nav-pagination__item-link:hover {
+    background-color:#f74f2e;
+}
+.nav-pagination__item-link-icon {
+
+}
