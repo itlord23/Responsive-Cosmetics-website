@@ -16,7 +16,7 @@
     <div id="wrapper">
         <header class="header">
             <div class="grid wide">
-                <nav class="header__navbar hide-on-tablet-mobile">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <!-- Phần đầu navbar -->
                     <ul class="navbar__list">
                         <li class="navbar__item navbar__item--saparate navbar__item--fade-qr">
@@ -121,8 +121,10 @@
                             </svg>
                         </a>
                     </div>
+
                     <input type="checkbox" hidden id="mobile-input-search" class="header__search-mobile-input">
-                    <div class="header__search">
+
+                    <div class="header__search hide-on-mobile">
                         <div class="header__search-box-search">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
                             <div class="list-search">
@@ -237,15 +239,23 @@
                 </div>
             </div>
             <ul class="header-sort-list">
-                <li class="header-sort-list__item"><a href="" class="header-sort-list__link">Liên quan</a></li>
-                <li class="header-sort-list__item header-sort-list__item--active"><a href="" class="header-sort-list__link">Mới nhất</a></li>
-                <li class="header-sort-list__item"><a href="" class="header-sort-list__link">Bán chạy</a></li>
-                <li class="header-sort-list__item"><a href="" class="header-sort-list__link">Giá</a></li>
+                <li class="header-sort-list__item header-sort-list__item--active">
+                    <a href="" class="header-sort-list__link">Liên quan</a>
+                </li>
+                <li class="header-sort-list__item">
+                    <a href="" class="header-sort-list__link">Mới nhất</a>
+                </li>
+                <li class="header-sort-list__item">
+                    <a href="" class="header-sort-list__link">Bán chạy</a>
+                </li>
+                <li class="header-sort-list__item">
+                    <a href="" class="header-sort-list__link">Giá</a>
+                </li>
             </ul>
         </header>
         <div class="goods-container">
             <div class="grid wide">
-                <div class="row small-gutter">
+                <div class="row small-gutter product-content">
                     <div class="col l-2 m-0 c-0">
                         <nav class="category">
                         <h3 class="category__header">Danh mục</h3>
@@ -263,7 +273,7 @@
                         </nav>
                     </div>
                     <div class="col l-10 m-12 c-12">
-                        <div class="nav-filter hide-on-tablet-mobile">
+                        <div class="nav-filter hide-on-mobile-tablet">
                             <span class="nav-filter__label">Sắp xếp theo</span>
                             <button class="nav-filter__btn btn btn---white-color">Phổ biến</button>
                             <button class="nav-filter__btn btn btn--primary-color">Mới nhất</button>

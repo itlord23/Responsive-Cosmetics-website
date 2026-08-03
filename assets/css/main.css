@@ -419,9 +419,11 @@
 .header__logo {
     width: 200px;
 }
+
 .header__search-mobile-input:checked ~ .header__search {
     display: flex;
 }
+
 .header__logo-img {
     width: 150px;
     color: var(--white-color);
@@ -754,6 +756,8 @@
 .header__cart-view:hover {
     background-color: #F05D41;
 }
+
+/* Header sort bar trên mobile */
 .header-sort-list {
     position: fixed;
     top: var(--height-header);
@@ -781,22 +785,25 @@
     line-height: var(--height-header-sort);
     position: relative;
 }
-.header-sort-list__link::after {
+.header-sort-list__link::before {
     content: "";
     display: block;
     position: absolute;
+    left: 0;
     height: 60%;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
     border-left: 1px solid var(--border-color);
 }
-.header-sort-list__item .header-sort-list__link::after {
+
+.header-sort-list__item:first-child .header-sort-list__link::before {
     display: none;
 }
+
 .header-sort-list__item--active .header-sort-list__link {
     color: var(--primary-color);
 }
+
 /* CSS cho Phần nav container */
 .goods-container {
     background-color: #F5F5F5;
@@ -908,6 +915,8 @@
     color: #555;
     font-size: 1.4rem;
 }
+
+/* CSS cho phần category trên mobile */
 .mobile-category {
     display: none;
 }
@@ -915,8 +924,8 @@
     display: flex;
     list-style: none;
     padding-left: 0;
-    max-width: 100%;
-    overflow-x: scroll;
+    max-width: 100%; /* Giới hạn chiều ngang của danh sách */
+    overflow-x: scroll; /* Cho phép cuộn ngang khi danh sách vượt quá chiều ngang */
 }
 .mobile-category__list::-webkit-scrollbar {
     display: none;
@@ -925,13 +934,15 @@
     flex-shrink: 0; /* Ngăn không cho các item con bị co nhỏ lại khi cha không đủ để chứa */
     margin-right: 10px;
 }
-.mobile-category__item:nth-last-of-type(3n) .mobile-category__link {
+
+/* nth-of-type: Chọn phần tử con dựa trên vị trí của nó trong danh sách các phần tử con cùng loại */
+.mobile-category__item:nth-of-type(3n) .mobile-category__link {
     background-color: #87AFD8;
 }
-.mobile-category__item:nth-last-of-type(3n + 1) .mobile-category__link {
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
     background-color: #76C9BD;
 }
-.mobile-category__item:nth-last-of-type(3n + 2) .mobile-category__link {
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
     background-color: #88CF81;
 }
 .mobile-category__link {
@@ -953,7 +964,9 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
     -moz-user-select: none;
+    padding: 0 4px;
 }
+
 /* CSS cho các sản phẩm */
 .main-product {
     margin-bottom: 10px;
@@ -1050,6 +1063,7 @@ i.main-product__item-favourite-action-fill {
 }
 .main-product__item-origin {
     display: flex;
+    padding-bottom: 4px;
     margin: 6px 10px 0;
     color: #595959;
     font-size: 1.2rem;
